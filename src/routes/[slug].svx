@@ -1,0 +1,25 @@
+---
+layout: blog
+---
+
+<script context="module">
+    export function load({ page }) {
+        const { slug } = page.params;
+        if (slug) {
+            return { props: { title: slug }};
+        }
+    }
+</script>
+
+<script>
+    import Counter from '$lib/Counter.svelte';
+    export let title;
+</script>
+
+# Blog post
+
+Title from URL: {title}
+
+This page is written in Markdown. Here's some **bold** and *italic* to prove it.
+
+And here's a counter, too: <Counter/> and it's inline.
