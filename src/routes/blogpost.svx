@@ -1,3 +1,6 @@
+---
+layout: blog
+---
 # Post title
 
 This page is written in Markdown. Here's some **bold** and *italic* to prove it.

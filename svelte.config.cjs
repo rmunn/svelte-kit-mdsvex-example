@@ -5,7 +5,13 @@ const { mdsvex } = require('mdsvex');
 /** @type {import('@sveltejs/kit').Config} */
 module.exports = {
 	extensions: ['.svelte', '.svx'],
-	preprocess: [ mdsvex() ],
+	preprocess: [
+		mdsvex({
+			layout: {
+				blog: './src/lib/BlogLayout.svelte',
+			}
+		})
+	],
 	kit: {
 		// By default, `npm run build` will create a standard Node app.
 		// You can create optimized builds for different platforms by
