@@ -1,42 +1,32 @@
-# create-svelte
+# Svelte-Kit + mdsvex
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+Markdown in Svelte, and Svelte in Markdown, powered by [Svelte-Kit](https://github.com/sveltejs/kit/) and [mdsvex](https://mdsvex.com/).
 
-## Creating a project
+## To use
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm init svelte@next
-
-# create a new project in my-app
-npm init svelte@next my-app
-```
-
-> Note: the `@next` is temporary
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+This example uses [pnpm](https://pnpm.js.org/en/). Install it if you don't have it already:
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+npm i -g pnpm
 ```
 
-## Building
+Then install the dependencies for this example:
 
-Svelte apps are built with _adapters_, which optimise your project for deployment to different environments.
+```bash
+pnpm i
+```
 
-By default, `npm run build` will generate a Node app that you can run with `node build`. To use a different adapter, add it to the `devDependencies` in `package.json` making sure to specify the version as `next` and update your `svelte.config.cjs` to [specify your chosen adapter](https://kit.svelte.dev/docs#configuration-adapter). The following official adapters are available:
+Then run it:
 
-- [@sveltejs/adapter-node](https://github.com/sveltejs/kit/tree/master/packages/adapter-node)
-- [@sveltejs/adapter-static](https://github.com/sveltejs/kit/tree/master/packages/adapter-static)
-- [@sveltejs/adapter-netlify](https://github.com/sveltejs/kit/tree/master/packages/adapter-netlify)
-- [@sveltejs/adapter-vercel](https://github.com/sveltejs/kit/tree/master/packages/adapter-vercel)
-- ...more soon
+```bash
+pnpm run dev
+```
 
-[See the adapter documentation for more detail](https://kit.svelte.dev/docs#adapters)
+Now open a browser to http://localhost:3000/ and you should see the Svelte welcome page. Now try visiting the following URLs:
+
+- http://localhost:3000/some-title
+- http://localhost:3000/some-other-title
+- http://localhost:3000/blogpost
+- http://localhost:3000/foo
+
+These pages will be served up by `src/routes/[slug].svx`,  `src/routes/[slug].svx` (again),  `src/routes/blogpost.svx`, and  `src/routes/foo.svelte` in that order.
